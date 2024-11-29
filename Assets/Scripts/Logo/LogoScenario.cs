@@ -1,4 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class LogoScenario : MonoBehaviour
 {
@@ -6,6 +10,11 @@ public class LogoScenario : MonoBehaviour
 	private	Progress	progress;
 	[SerializeField]
 	private	SceneNames	nextScene;
+	[SerializeField]
+	private Text titleText;
+
+	Color colorAlhpa;
+	float f = 1;
 
 	private void Awake()
 	{
@@ -33,5 +42,17 @@ public class LogoScenario : MonoBehaviour
 	{
 		Utils.LoadScene(nextScene);
 	}
+
+	/*
+	IEnumerator FadeOut()
+    {
+		while (true)
+		{
+			colorAlhpa.a = titleText.color.a;
+			colorAlhpa.a -= Time.deltaTime;
+			titleText.color = colorAlhpa;
+		}
+	}
+	*/
 }
 
