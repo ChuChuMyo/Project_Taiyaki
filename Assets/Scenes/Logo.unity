@@ -409,7 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderProgress: {fileID: 1883101558}
   textProgressData: {fileID: 767796373}
-  progressTime: 2
+  progressTime: 1
 --- !u!1 &294824590
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progress: {fileID: 267894299}
   nextScene: 1
-  titleText: {fileID: 253263190}
+  titleText: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InGameUIController : MonoBehaviour
 {
+    [SerializeField]
+    private SceneNames nextScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,10 @@ public class InGameUIController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnClickExit()
+    {
+        Utils.LoadScene(nextScene);
     }
 }
