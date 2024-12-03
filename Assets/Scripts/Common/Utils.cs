@@ -1,7 +1,6 @@
 using UnityEngine.SceneManagement;
 
 public enum SceneNames { Logo=0, Lobby, InGame, }
-
 public static class Utils
 {
 	public static string GetActiveScene()

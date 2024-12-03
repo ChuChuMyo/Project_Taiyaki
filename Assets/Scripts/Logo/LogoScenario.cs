@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class LogoScenario : MonoBehaviour
 {
@@ -11,14 +12,17 @@ public class LogoScenario : MonoBehaviour
 	[SerializeField]
 	private	SceneNames	nextScene;
 	[SerializeField]
-	private Text titleText;
-
-	Color colorAlhpa;
-	float f = 1;
+	private TextMeshProUGUI titleText;
+	[SerializeField]
+	private float fadeDuration = 0.5f;
 
 	private void Awake()
 	{
 		SystemSetup();
+
+		//titleText.alpha = 0f;
+
+		//FadeInOut();
 	}
 
 	private void SystemSetup()
@@ -26,7 +30,6 @@ public class LogoScenario : MonoBehaviour
 		// 활성화되지 않은 상태에서도 게임이 계속 진행
 		Application.runInBackground = true;
 
-		// 해상도 설정 (9:18.5, 1440x2960, 갤럭시 노트 8)
 		int width	= Screen.width;
 		int height	= (int)(Screen.width * 16f / 9);
 		Screen.SetResolution(width, height, true);
@@ -43,16 +46,12 @@ public class LogoScenario : MonoBehaviour
 		Utils.LoadScene(nextScene);
 	}
 
-	/*
-	IEnumerator FadeOut()
-    {
-		while (true)
-		{
-			colorAlhpa.a = titleText.color.a;
-			colorAlhpa.a -= Time.deltaTime;
-			titleText.color = colorAlhpa;
-		}
+	public void FadeInOut()
+	{
+		titleText.DOFade(1f, fadeDuration).SetEase(Ease.Linear)
+			.OnKill(() => {
+				titleText.DOFade(0f, fadeDuration).SetEase(Ease.Linear);
+			});
 	}
-	*/
 }
 
