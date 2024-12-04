@@ -24,7 +24,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
 
             if (!m_IsDestroyOnLoad)
             {
-                DontDestroyOnLoad(this);
+                DontDestroyOnLoad(this.gameObject);
             }
         }
         else

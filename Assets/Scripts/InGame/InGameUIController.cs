@@ -1,34 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class InGameUIController : MonoBehaviour
 {
     [SerializeField]
     private SceneNames nextScene;
     [SerializeField]
-    private Shutter shutter;
+    private Slider timerSlider;
+    [SerializeField]
+    private TextMeshProUGUI incomeText;
     // Start is called before the first frame update
     void Start()
     {
-        shutter.ShutterUP();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        timerSlider.value = InGameManager.Instance.gameTimer / 60f;
     }
 
     public void OnClickExit()
     {
-        StartCoroutine(ExitInGame());
+        InGameManager.Instance.GameEnd();
     }
 
-    IEnumerator ExitInGame()
-    {
-        shutter.ShutterDown();
-        yield return new WaitForSeconds(1f);
-        Utils.LoadScene(nextScene);
-    }
+
 }
