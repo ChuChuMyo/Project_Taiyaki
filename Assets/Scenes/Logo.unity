@@ -1034,6 +1034,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd808f7189f257a409be03c07c61c6ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UICanvasTrs: {fileID: 0}
+  m_ClosedUITrs: {fileID: 0}
 --- !u!4 &821789802
 Transform:
   m_ObjectHideFlags: 0
@@ -1177,7 +1179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1160794483}
   m_Layer: 0
-  m_Name: ClsedUI
+  m_Name: ClosedUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
