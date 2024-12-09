@@ -4,22 +4,9 @@ using UnityEngine;
 
 public class LobbyUIController : MonoBehaviour
 {
-    [SerializeField]
-    private SceneNames nextScene;
-    // Start is called before the first frame update
-    void Start()
+    public void OnClickSettingsBtn()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void OnClickGameStart()
-    {
-        Utils.LoadScene(nextScene);
+        var uiData = new BaseUIData();
+        UIManager.Instance.OpenUI<SettingsUI>(uiData);
     }
 }

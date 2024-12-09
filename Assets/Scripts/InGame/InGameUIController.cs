@@ -28,5 +28,11 @@ public class InGameUIController : MonoBehaviour
         InGameManager.Instance.GameEnd();
     }
 
+    public void OnClickPauseBtn()
+    {
+        var uiData = new BaseUIData();
+        InGameManager.Instance.GamePause();
+        UIManager.Instance.OpenUI<PauseUI>(uiData);
+    }
 
 }

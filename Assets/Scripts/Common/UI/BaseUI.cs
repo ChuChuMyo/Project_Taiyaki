@@ -19,7 +19,7 @@ public class BaseUI : MonoBehaviour
         m_OnShow = null;
         m_OnClose = null;
         transform.SetParent(anchor);
-
+        
         var rectTransform = GetComponent<RectTransform>();
         if (!rectTransform)
         {
@@ -30,6 +30,7 @@ public class BaseUI : MonoBehaviour
         rectTransform.localScale = new Vector3(1f, 1f, 1f);
         rectTransform.offsetMin = new Vector2(0, 0);
         rectTransform.offsetMax = new Vector2(0, 0);
+        
     }
 
 
@@ -58,7 +59,7 @@ public class BaseUI : MonoBehaviour
         }
         m_OnClose = null;
 
-        //UIManager.Instance.CloseUI(this);
+        UIManager.Instance.CloseUI(this);
     }
 
     public virtual void OnClickCloseButton()

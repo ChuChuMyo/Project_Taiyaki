@@ -622,7 +622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36b5c307fcb419499d90d4ef04a8117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: 2
 --- !u!1 &1204592277
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,21 +781,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingBtn
       objectReference: {fileID: 0}
+    - target: {fileID: 6792096897112023124, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792096897112023124, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792096897112023124, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1079486663}
+    - target: {fileID: 6792096897112023124, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792096897112023124, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickSettingsBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792096897112023124, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LobbyUIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792096897112023124, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6873241010489185734, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
       propertyPath: m_text
-      value: Set
+      value: "\uC124\uC815"
       objectReference: {fileID: 0}
     - target: {fileID: 8837493192859416507, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8837493192859416507, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8837493192859416507, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8837493192859416507, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
       propertyPath: m_AnchorMax.y
@@ -804,7 +831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837493192859416507, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8837493192859416507, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
       propertyPath: m_AnchorMin.y
@@ -848,11 +875,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837493192859416507, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -80
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8837493192859416507, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -80
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 8837493192859416507, guid: c96e56665e24aa04ca11106ee12c5336, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1187,6 +1214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a831b4f9ac7227d43bf2e1a287ea4e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: 2
 --- !u!1 &1741305257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,8 +1298,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1079486663}
-        m_TargetAssemblyTypeName: LobbyUIController, Assembly-CSharp
+      - m_Target: {fileID: 1514212704}
+        m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: OnClickGameStart
         m_Mode: 1
         m_Arguments:

@@ -2,7 +2,7 @@ using UnityEngine.SceneManagement;
 
 public enum SceneNames { Logo=0, Lobby, InGame, }
 
-public enum GameState { Playing, Pause, End, }
+public enum GameState { End, Playing, Pause,  }
 public static class Utils
 {
 	public static string GetActiveScene()

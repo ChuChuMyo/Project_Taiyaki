@@ -19,8 +19,7 @@ public class InGameManager : Singleton<InGameManager>
     // Start is called before the first frame update
     void Start()
     {
-        shutter.ShutterUP();
-        gameTimer = 60f;
+        StartCoroutine(GameStartCo());
     }
 
     // Update is called once per frame
@@ -54,9 +53,18 @@ public class InGameManager : Singleton<InGameManager>
     public void GameEnd()
     {
         gameState = GameState.End;
-        StartCoroutine(ExitInGame());
+        StartCoroutine(ExitInGameCo());
     }
-    IEnumerator ExitInGame()
+
+    IEnumerator GameStartCo()
+    {
+        shutter.ShutterUP();
+        gameTimer = 60f;
+        yield return new WaitForSeconds(1f);
+        GameResume();
+    }
+
+    IEnumerator ExitInGameCo()
     {
         shutter.ShutterDown();
         yield return new WaitForSeconds(1f);
