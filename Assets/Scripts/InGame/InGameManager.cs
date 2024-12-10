@@ -60,7 +60,7 @@ public class InGameManager : Singleton<InGameManager>
     {
         shutter.ShutterUP();
         gameTimer = 60f;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(4f);
         GameResume();
     }
 

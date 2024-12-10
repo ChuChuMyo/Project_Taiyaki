@@ -11,13 +11,7 @@ public class InGameUIController : MonoBehaviour
     private Slider timerSlider;
     [SerializeField]
     private TextMeshProUGUI incomeText;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         timerSlider.value = InGameManager.Instance.gameTimer / 60f;
@@ -34,5 +28,4 @@ public class InGameUIController : MonoBehaviour
         InGameManager.Instance.GamePause();
         UIManager.Instance.OpenUI<PauseUI>(uiData);
     }
-
 }
