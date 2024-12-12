@@ -10,8 +10,9 @@ public class InGameUIController : MonoBehaviour
     [SerializeField]
     private Slider timerSlider;
     [SerializeField]
-    private TextMeshProUGUI incomeText;
+    public TextMeshProUGUI incomeText;
 
+    public TextMeshProUGUI orderRecipe;
     void Update()
     {
         timerSlider.value = InGameManager.Instance.gameTimer / 60f;
@@ -27,5 +28,19 @@ public class InGameUIController : MonoBehaviour
         var uiData = new BaseUIData();
         InGameManager.Instance.GamePause();
         UIManager.Instance.OpenUI<PauseUI>(uiData);
+    }
+
+    public void UpdateUI()
+    {
+        incomeText.text = UserDataManager.Instance.userData.playerMoney + "";
+    }
+
+    public void ShowOrder()
+    {
+        orderRecipe.text = "";
+        for (int i = 0; i < InGameManager.Instance.recipe.Count; i++)
+        {
+            orderRecipe.text += InGameManager.Instance.recipe[i].ToString() + "\n";
+        }
     }
 }
