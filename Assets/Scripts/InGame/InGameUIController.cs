@@ -12,7 +12,6 @@ public class InGameUIController : MonoBehaviour
     [SerializeField]
     public TextMeshProUGUI incomeText;
 
-    public TextMeshProUGUI orderRecipe;
     void Update()
     {
         timerSlider.value = InGameManager.Instance.gameTimer / 60f;
@@ -35,12 +34,5 @@ public class InGameUIController : MonoBehaviour
         incomeText.text = UserDataManager.Instance.userData.playerMoney + "";
     }
 
-    public void ShowOrder()
-    {
-        orderRecipe.text = "";
-        for (int i = 0; i < InGameManager.Instance.recipe.Count; i++)
-        {
-            orderRecipe.text += InGameManager.Instance.recipe[i].ToString() + "\n";
-        }
-    }
+    
 }

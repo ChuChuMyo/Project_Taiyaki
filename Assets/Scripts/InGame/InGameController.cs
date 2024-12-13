@@ -6,10 +6,12 @@ using System.Linq;
 public class InGameController : MonoBehaviour
 {
     public InGameUIController InGameUIController { get; private set; }
+    public Order Order { get; private set; }
 
     private void Start()
     {
         InGameUIController = FindFirstObjectByType<InGameUIController>();
+        Order = FindFirstObjectByType<Order>();
     }
     public void OnClickBun()
     {
@@ -44,7 +46,7 @@ public class InGameController : MonoBehaviour
             InGameUIController.UpdateUI();
             InGameManager.Instance.recipe.Clear();
             InGameManager.Instance.tray.Clear();
-            InGameUIController.ShowOrder();
+            Order.ShowOrder();
             return;
         }
         else
