@@ -16,9 +16,7 @@ public class InGameManager : Singleton<InGameManager>
     [SerializeField]
     private SceneNames sceneNames;
 
-    public List<Ingredient> recipe = new List<Ingredient>(4);
-    public List<Ingredient> tray = new List<Ingredient>(4);
-    public Queue<List<Ingredient>> orderQueue = new Queue<List<Ingredient>>(3);
+
     protected override void Init()
     {
         m_IsDestroyOnLoad = true;
@@ -31,7 +29,6 @@ public class InGameManager : Singleton<InGameManager>
         InGameUIController = FindFirstObjectByType<InGameUIController>();
         Order = FindFirstObjectByType<Order>();
         InGameUIController.UpdateUI();
-        orderNum = 0;
     }
 
     // Update is called once per frame
@@ -47,20 +44,8 @@ public class InGameManager : Singleton<InGameManager>
         }
     }
 
-    public void AddOrder()
-    {
-        orderNum++;
-        recipe.Add(Ingredient.Bun);
-        for (int i = 0; i < Random.Range(1,5); i++)
-        {
-            recipe.Add((Ingredient)Random.Range(1, 5));
-        }
-        recipe.Add(Ingredient.Bun);
-        Order.ShowOrder();
-        orderQueue.Enqueue(recipe);
-    }
 
-    public void OnClickBun()
+    public void LoadOrder()
     {
 
     }
@@ -92,7 +77,7 @@ public class InGameManager : Singleton<InGameManager>
         gameTimer = 60f;
         yield return new WaitForSeconds(4f);
         GameResume();
-        AddOrder();
+        //AddOrder();
     }
 
     IEnumerator ExitInGameCo()

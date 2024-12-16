@@ -7,53 +7,37 @@ public class InGameController : MonoBehaviour
 {
     public InGameUIController InGameUIController { get; private set; }
     public Order Order { get; private set; }
+    public Tray Tray { get; private set; }
 
     private void Start()
     {
         InGameUIController = FindFirstObjectByType<InGameUIController>();
+        Tray = FindFirstObjectByType<Tray>();
         Order = FindFirstObjectByType<Order>();
     }
     public void OnClickBun()
     {
-        InGameManager.Instance.tray.Add(Ingredient.Bun);
+        Tray.tray.Add(Ingredient.Bun);
     }
 
     public void OnClickLettuce()
     {
-        InGameManager.Instance.tray.Add(Ingredient.Lettuce);
+        Tray.tray.Add(Ingredient.Lettuce);
     }
 
     public void OnClickTomato()
     {
-        InGameManager.Instance.tray.Add(Ingredient.Tomato);
+        Tray.tray.Add(Ingredient.Tomato);
     }
 
     public void OnClickCheese()
     {
-        InGameManager.Instance.tray.Add(Ingredient.Cheese);
+        Tray.tray.Add(Ingredient.Cheese);
     }
 
     public void OnClickPatty()
     {
-        InGameManager.Instance.tray.Add(Ingredient.Patty);
+        Tray.tray.Add(Ingredient.Patty);
     }
 
-    public void OnClickSale()
-    {
-        if (InGameManager.Instance.recipe.SequenceEqual(InGameManager.Instance.tray))
-        {
-            UserDataManager.Instance.userData.playerMoney += 100;
-            InGameUIController.UpdateUI();
-            InGameManager.Instance.recipe.Clear();
-            InGameManager.Instance.tray.Clear();
-            Order.ShowOrder();
-            return;
-        }
-        else
-        {
-            InGameManager.Instance.recipe.Clear();
-            InGameManager.Instance.tray.Clear();
-            return;
-        }
-    }
 }
